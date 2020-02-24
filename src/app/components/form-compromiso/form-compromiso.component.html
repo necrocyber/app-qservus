@@ -1,0 +1,62 @@
+<mat-card>
+
+    <mat-card-header>
+
+        <div mat-card-avatar class="example-header-image">
+            <mat-icon aria-hidden="false" aria-label="Compromisos">assignment</mat-icon>
+        </div>
+        <mat-card-title>Formulario Compromiso</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+            <div class="container">
+                <div class="box-form">
+                    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nombre</mat-label>
+                        <input required matInput name="nombre" #nombre [(ngModel)]="services.selectedCompromiso.nombre">
+                    </mat-form-field>
+                    
+                </div>
+
+                <div class="box-form">
+                    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Descripción</mat-label>
+                        <textarea maxlength="100" required matInput name="descripcion" #descripcion [(ngModel)]="services.selectedCompromiso.descripcion"></textarea>
+                    </mat-form-field>
+                    
+                </div>
+
+                <div class="box-form">
+                    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Fecha Creación</mat-label>
+                        <input required matInput [matDatepicker]="picker_creacion" name="fecha_creacion" #fecha_creacion [(ngModel)]="services.selectedCompromiso.fecha_creacion">
+                        <mat-datepicker-toggle matSuffix [for]="picker_creacion"></mat-datepicker-toggle>
+                        <mat-datepicker #picker_creacion></mat-datepicker>
+                    </mat-form-field>
+                
+                </div>
+
+                <div class="box-form">
+                
+                    <mat-form-field appearance="outline">
+                        <mat-label>Fecha Entrega</mat-label>
+                        <input type="datatime" required matInput [matDatepicker]="picker_entrega" name="fecha_entrega" #fecha_entrega [(ngModel)]="services.selectedCompromiso.fecha_entrega">
+                        <mat-datepicker-toggle matSuffix [for]="picker_entrega"></mat-datepicker-toggle>
+                        <mat-datepicker #picker_entrega></mat-datepicker>
+                    </mat-form-field>
+                    
+                </div>
+                
+                <div class="button-box">
+                    <button type="submit" mat-flat-button color="primary">Crear Compromiso</button>
+                </div>
+
+            </div> 
+        </form>
+    </mat-card-content>
+    
+</mat-card>

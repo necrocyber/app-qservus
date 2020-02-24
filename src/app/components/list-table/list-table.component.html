@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-header>
+        
+        <div mat-card-avatar class="example-header-image">
+            <mat-icon aria-hidden="false" aria-label="Compromisos">list</mat-icon>
+        </div>
+        <mat-card-title><span>Listado de Compromisos</span></mat-card-title>
+        <button (click)="create()" class="box-left" mat-flat-button color="primary">Crear</button>
+
+    </mat-card-header>
+    <mat-card-content>
+
+        <div cdkDropList class="container-list" (cdkDropListDropped)="drop($event)">
+            <div class="list-box header-box">
+                <div class="box-name bold">Nombre</div>
+                <div class="box-descrip bold">Descripción</div>
+                <div class="box-creacion bold">Fecha Creación</div>
+                <div class="box-entrega bold">Fecha Entrega</div>
+            </div>
+            <div class="list-box body-box" *ngFor="let compromiso of compromisos" cdkDrag>
+                <div class="box-name">{{compromiso.nombre}}</div>
+                <div class="box-descrip">{{compromiso.descripcion}}</div>
+                <div class="box-creacion">{{getDate(compromiso.fecha_creacion)}}</div>
+                <div class="box-entrega">{{getDate(compromiso.fecha_entrega)}}</div>
+            </div>
+        </div>
+
+    </mat-card-content>
+
+</mat-card>

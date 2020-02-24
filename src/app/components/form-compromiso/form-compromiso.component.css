@@ -1,0 +1,41 @@
+mat-card {
+    display: block;
+    width: 60%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-form {
+    width: calc(50% - 20px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.button-box {
+    width: 100%;
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+/* Mobile Styles */
+@media (max-width: 610px) {
+    .box-form {
+        width: 100%;
+    }
+
+    mat-card {
+        width: 90%;
+    }
+}
